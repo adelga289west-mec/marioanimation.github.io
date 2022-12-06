@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Spin</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .body{
+            
+            background-image: url(mbackground.png);
+            background-size:cover;
+            position: absolute;
+            background-repeat: no-repeat;
+        }
+        .spinMario{
+            background-image: url(mariospin.png);
+            width:110px;
+            height:350px;
+            animation: mario 1s steps(12) infinite, spin 4s linear infinite;
+            margin-top:380px;
+            margin-left:170px;
+            position: relative;    
+        }
+        .koopaWalk{
+            background-image: url(koopawalk.png);
+            width:120px;
+            height:250px;
+            animation:koopa 1s steps(5) infinite, walk 10s linear infinite;
+            position:absolute;
+            margin-top:-80px;
+        }
+        @keyframes mario{
+            0%{background-position: 0px;}
+            
+            100%{background-position: 3000px;}
+        }
+        @keyframes koopa{
+            0%{background-position: 0px}
+
+            100%{background-position: 4195px;}
+        }
+        @keyframes walk{
+            0%{transform: translateX(0px);}
+            50%{transform: translateX(1400px);
+            }
+            50.1%{transform: translateX(1400px) scaleX(-1);
+            }
+            100%{
+                transform: translateX(0px) scaleX(-1); 
+             } 
+        }
+        @keyframes spin{
+            0%{margin-left:1350px;
+            transform: translateY(-70px);}
+            15%{transform:translateY(-400px);
+            margin-left:1350px;}
+            50%{transform:translateY(-1500px);}
+            
+            90%{margin-left:170px;}
+            100%{transform: translateY(0);}
+        }
+        .pipe{
+            margin-top:-215px;
+            margin-left:115px;
+            position: absolute;    
+        }
+        .pipe2{
+            margin-left:1310px;
+            margin-top:-375px;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="body">
+        <div class="container">
+            <div class="spinMario">
+            </div>
+            <div class="pipe">
+                <img src="mariopipe.png" width="200px" height="220px">
+            </div>
+            <div class="pipe2">
+                <img src="mariopipe.png" width="200px" height="250px">
+            </div>
+            <div class="koopaWalk">
+            </div>   
+        </div> 
+</body>
+</html>
